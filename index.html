@@ -3,105 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jefy — Frontend Developer</title>
+<title>Esther Jephri Shiny D — Frontend Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --cream:#FFF7EE;
-    --violet:#6C4CE0;
-    --coral:#FF5D5D;
-    --lime:#C6F135;
-    --sky:#3FC1E9;
-    --ink:#221B3B;
-    --font-display:'Fredoka',sans-serif;
-    --font-body:'Space Grotesk',sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--cream);color:var(--ink);font-family:var(--font-body);overflow-x:hidden;}
-  a{text-decoration:none;color:inherit;}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px;position:relative;z-index:2;}
-  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;z-index:0;}
-
-  nav{padding:22px 0;position:relative;z-index:5;}
-  nav .wrap{display:flex;justify-content:space-between;align-items:center;}
-  .logo{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--violet);}
-  .navlinks{display:flex;gap:10px;}
-  .navlinks a{font-weight:600;font-size:14px;padding:8px 16px;border-radius:100px;border:2px solid var(--ink);}
-  .navlinks a:hover{background:var(--lime);}
-
-  header.hero{padding:70px 0 100px;position:relative;}
-  .blob1{width:380px;height:380px;background:var(--lime);top:-80px;right:-100px;}
-  .blob2{width:280px;height:280px;background:var(--sky);bottom:-60px;left:-80px;}
-  .badge{display:inline-block;background:var(--coral);color:white;font-weight:600;font-size:13px;padding:8px 18px;border-radius:100px;border:2px solid var(--ink);transform:rotate(-3deg);margin-bottom:26px;}
-  h1{font-family:var(--font-display);font-weight:700;font-size:clamp(38px,7vw,66px);line-height:1.05;letter-spacing:-1px;margin-bottom:22px;}
-  h1 .hl{background:var(--lime);padding:0 10px;border-radius:8px;display:inline-block;transform:rotate(-1deg);}
-  .hero p{max-width:520px;font-size:18px;color:#4A4360;margin-bottom:36px;}
-  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
-  .btn{font-family:var(--font-display);font-weight:600;font-size:15px;padding:14px 28px;border-radius:100px;border:2.5px solid var(--ink);transition:transform .15s;}
-  .btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink);}
-  .btn-fill{background:var(--violet);color:white;}
-  .btn-ghost{background:var(--cream);}
-
-  section{padding:70px 0;position:relative;}
-  .sec-tag{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:13px;background:var(--ink);color:var(--cream);padding:6px 16px;border-radius:100px;margin-bottom:14px;}
-  .sec-title{font-family:var(--font-display);font-weight:700;font-size:32px;margin-bottom:42px;}
-
-  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-  .skill-card{background:white;border:2.5px solid var(--ink);border-radius:20px;padding:22px;box-shadow:6px 6px 0 var(--ink);transition:transform .15s;}
-  .skill-card:nth-child(1){background:#EFE7FF;}
-  .skill-card:nth-child(2){background:#FFE9E2;}
-  .skill-card:nth-child(3){background:#E3F7FF;}
-  .skill-card:nth-child(4){background:#F2FFD6;}
-  .skill-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
-  .skill-card h4{font-family:var(--font-display);font-size:16px;margin-bottom:8px;}
-  .skill-card p{font-size:14px;color:#4A4360;}
-
-  .project{background:white;border:2.5px solid var(--ink);border-radius:22px;padding:28px;margin-bottom:22px;box-shadow:7px 7px 0 var(--ink);transition:transform .15s;}
-  .project:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--ink);}
-  .project .tag{font-family:var(--font-display);font-weight:600;font-size:12px;background:var(--sky);padding:5px 14px;border-radius:100px;display:inline-block;margin-bottom:14px;border:2px solid var(--ink);}
-  .status-inprogress{background:var(--coral);color:white;font-family:var(--font-display);font-weight:600;font-size:11px;padding:5px 14px;border-radius:100px;margin-left:8px;border:2px solid var(--ink);}
-  .project h3{font-family:var(--font-display);font-size:21px;margin-bottom:10px;}
-  .project p{color:#4A4360;font-size:14.5px;margin-bottom:16px;}
-  .stack{display:flex;flex-wrap:wrap;gap:8px;}
-  .stack span{font-size:12px;font-weight:600;background:var(--cream);border:1.5px solid var(--ink);padding:4px 12px;border-radius:100px;}
-  .project-links{margin-top:16px;}
-  .project-links a{font-weight:700;font-size:13px;color:var(--violet);}
-  .project-links a:hover{text-decoration:underline;}
-
-  .research-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:2px dashed var(--ink);}
-  .research-item:last-child{border-bottom:none;}
-  .research-item .num{font-family:var(--font-display);font-weight:700;color:var(--coral);font-size:20px;}
-  .research-item h4{font-family:var(--font-display);font-size:17px;margin-bottom:4px;}
-  .research-item p{color:#4A4360;font-size:14px;}
-
-  .contact-box{background:var(--violet);color:white;border-radius:28px;padding:50px 40px;text-align:center;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--ink);}
-  .contact-box .sec-title{color:white;margin-bottom:14px;}
-  .contact-box p{color:#E4DEFF;margin-bottom:30px;}
-  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .contact-links a{font-family:var(--font-display);font-weight:600;font-size:14px;background:var(--lime);color:var(--ink);padding:12px 24px;border-radius:100px;border:2px solid var(--ink);}
-  .contact-links a:hover{background:white;}
-
-  footer{padding:30px 0;text-align:center;font-size:13px;color:#4A4360;}
-
-  @media(max-width:640px){
-    .navlinks a{padding:6px 12px;font-size:12px;}
-    header.hero{padding:50px 0 70px;}
-    section{padding:50px 0;}
-    .contact-box{padding:36px 24px;}
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="logo">jefy ✦</div>
+    <div class="logo">esther.dev</div>
     <div class="navlinks">
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="active">home</a>
+      <a href="experience.html">experience</a>
+      <a href="projects.html">projects</a>
+      <a href="research.html">research</a>
+      <a href="contact.html">contact</a>
     </div>
   </div>
 </nav>
@@ -111,101 +28,46 @@
   <div class="blob blob2"></div>
   <div class="wrap">
     <span class="badge">✦ open to work</span>
-    <h1>I build web stuff<br>that feels <span class="hl">alive.</span></h1>
-    <p>Frontend developer working in React.js — real-time dashboards, safety systems, and business sites. Currently leveling up into full-stack with Spring Boot.</p>
+    <h1>Building interfaces<br>that feel <span class="hl">alive.</span></h1>
+    <p>Frontend Developer skilled in React.js, HTML, CSS, and JavaScript — completed internship at Icanio Technologies building an Asset Management module and a real-time Flight Tracker UI. Published researcher with an international journal paper and conference presentation. Pursuing MCA.</p>
     <div class="cta-row">
-      <a href="#work" class="btn btn-fill">See my work</a>
-      <a href="#contact" class="btn btn-ghost">Say hi</a>
+      <a href="projects.html" class="btn btn-fill">View Projects</a>
+      <a href="contact.html" class="btn btn-ghost">Get In Touch</a>
     </div>
   </div>
 </header>
 
-<section id="work">
+<section>
   <div class="wrap">
-    <span class="sec-tag">selected work</span>
-    <h2 class="sec-title">Projects</h2>
-
-    <div class="project">
-      <span class="tag">Web App</span>
-      <h3>Live Flight Tracker UI</h3>
-      <p>Real-time flight tracking interface — built the frontend to consume live flight data and render it in a clean, readable dashboard.</p>
-      <div class="stack"><span>React.js</span><span>REST API</span><span>Real-Time Data</span></div>
-    </div>
-
-    <div class="project">
-      <span class="tag">Applied ML / Safety</span>
-      <h3>Driver Drowsiness Detection System</h3>
-      <p>A safety-focused system that detects driver fatigue in real time, aimed at reducing accident risk through early alerting.</p>
-      <div class="stack"><span>Computer Vision</span><span>Real-Time Alerts</span></div>
-    </div>
-
-    <div class="project">
-      <span class="tag">IoT / Systems</span>
-      <h3>Smart Traffic Light System</h3>
-      <p>An intelligent traffic signal system designed to adapt to real traffic conditions instead of running on fixed timers.</p>
-      <div class="stack"><span>Embedded Logic</span><span>Automation</span></div>
-    </div>
-
-    <div class="project">
-      <span class="tag">Client Website</span>
-      <h3>RDV Traders — Business Website</h3>
-      <p>Multi-page website and printable letterhead for RDV Traders, a raw material supplier for paper mills. Gold-and-navy theme, deployed live.</p>
-      <div class="stack"><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div>
-      <div class="project-links"><a href="#" target="_blank">Live site →</a></div>
-    </div>
-
-    <div class="project">
-      <span class="tag">Full-Stack</span><span class="status-inprogress">in progress</span>
-      <h3>StreamHub</h3>
-      <p>A YouTube-style streaming platform — capstone project of a self-directed transition from React frontend into Java Spring Boot backend, covering REST APIs, dependency injection, and full CRUD architecture.</p>
-      <div class="stack"><span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>React.js</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <span class="sec-tag">toolbox</span>
-    <h2 class="sec-title">Skills</h2>
+    <div class="sec-tag">toolbox</div>
+    <div class="sec-title">Technical Skills</div>
     <div class="skill-grid">
-      <div class="skill-card"><h4>Frontend</h4><p>React.js, JavaScript (ES6+), HTML5, CSS3</p></div>
-      <div class="skill-card"><h4>Learning / Backend</h4><p>Java, Spring Boot, REST APIs, CRUD architecture</p></div>
-      <div class="skill-card"><h4>Tools</h4><p>Git, GitHub, GitHub Pages, VS Code</p></div>
-      <div class="skill-card"><h4>Approach</h4><p>Self-directed learner — builds real projects to learn by doing</p></div>
+      <div class="skill-card"><h4>Languages</h4><p>JavaScript (ES6+), HTML5, CSS3</p></div>
+      <div class="skill-card"><h4>Frontend Frameworks</h4><p>React.js, React Native</p></div>
+      <div class="skill-card"><h4>State Management</h4><p>Redux Toolkit</p></div>
+      <div class="skill-card"><h4>Styling & UI</h4><p>Tailwind CSS</p></div>
+      <div class="skill-card"><h4>Backend & API</h4><p>Python</p></div>
+      <div class="skill-card"><h4>Database</h4><p>PostgreSQL, MongoDB</p></div>
+      <div class="skill-card"><h4>Cloud & Tools</h4><p>Git, GitHub</p></div>
     </div>
   </div>
 </section>
 
-<section id="research">
+<section style="border-bottom:none;">
   <div class="wrap">
-    <span class="sec-tag">beyond code</span>
-    <h2 class="sec-title">Research & Publications</h2>
-    <div class="research-item">
-      <span class="num">01</span>
-      <div><h4>International Journal Publication</h4><p>Published research paper in an international journal.</p></div>
-    </div>
-    <div class="research-item">
-      <span class="num">02</span>
-      <div><h4>Conference Presentation</h4><p>Presented research findings at an academic conference.</p></div>
+    <div class="sec-tag">education</div>
+    <div class="sec-title">Education</div>
+    <div class="edu-block">
+      <h4>Masters of Computer Applications</h4>
+      <div class="meta">Sarah Tucker College, Tirunelveli · July 2024 – May 2026</div>
+      <div class="score">Graduated with 75%</div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-box">
-      <h2 class="sec-title">Let's build something</h2>
-      <p>Open to frontend developer roles — reach out anytime.</p>
-      <div class="contact-links">
-        <a href="mailto:youremail@example.com">Email</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Jefri2604" target="_blank">GitHub</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 Jefy. Built with HTML, CSS & JS.</footer>
+<footer>
+  <div class="wrap">© 2026 Esther Jephri Shiny D. Built with HTML, CSS & JS.</div>
+</footer>
 
 </body>
 </html>
